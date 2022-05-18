@@ -2,7 +2,10 @@ module flybywind.me/fyne
 
 go 1.17
 
-require fyne.io/fyne/v2 v2.1.4
+require (
+	fyne.io/fyne/v2 v2.1.4
+	rsc.io/pdf v0.1.1
+)
 
 require (
 	github.com/davecgh/go-spew v1.1.1 // indirect
