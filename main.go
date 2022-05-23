@@ -19,7 +19,7 @@ func main() {
 	w.SetMainMenu(makeMenu(a, w))
 	w.SetMaster()
 	w.Resize(config.WindSize)
-	w.SetContent(container.NewVBox(menu.NewHomeMenu(), pdfview.NewPdfViewer()))
+	w.SetContent(container.NewVBox(menu.NewHomeMenu(w), pdfview.NewPdfViewer()))
 	w.ShowAndRun()
 }
 

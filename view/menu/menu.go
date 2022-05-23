@@ -24,7 +24,6 @@ func NewHomeMenu(w fyne.Window) fyne.CanvasObject {
 }
 
 func tapOpen(win fyne.Window) {
-	// todo
 	fd := dialog.NewFileOpen(func(reader fyne.URIReadCloser, err error) {
 		if err != nil {
 			dialog.ShowError(err, win)
