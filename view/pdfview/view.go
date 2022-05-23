@@ -48,7 +48,12 @@ func OpenPDF(fullpath string, parent fyne.Window) error {
 	log.Println("page number:", pageNum)
 	pages := make([]pdf.Page, pageNum)
 	for i := 0; i < pageNum; i++ {
-		pages[i] = pdfReader.Page(i)
+		p := pdfReader.Page(i + 1)
+		if p.V.IsNull() {
+			fyne.LogError("skip page", fmt.Errorf("%d page is null", i+1))
+			continue
+		}
+		pages[i] = p
 	}
 	pdfList = append(pdfList, &pdfMeta{
 		pages:          pages,
